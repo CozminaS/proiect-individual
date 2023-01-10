@@ -1,19 +1,8 @@
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.PasswordAuthentication;
-import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
-import javax.swing.JOptionPane;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -24,12 +13,12 @@ import javax.swing.JOptionPane;
  *
  * @author Cozmina
  */
-public class RegisterAdmin extends javax.swing.JFrame {
+public class StergeProduse extends javax.swing.JFrame {
 
     /**
-     * Creates new form Register
+     * Creates new form StergeProduse
      */
-    public RegisterAdmin() {
+    public StergeProduse() {
         initComponents();
     }
 
@@ -42,21 +31,16 @@ public class RegisterAdmin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jRadioButton1 = new javax.swing.JRadioButton();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        registerUtilizator = new javax.swing.JTextField();
+        sterge = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         actiuneRegister = new javax.swing.JButton();
         inapoiMeniuIntrare = new javax.swing.JButton();
 
-        jRadioButton1.setText("jRadioButton1");
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setResizable(false);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(34, 28, 14));
 
@@ -66,7 +50,7 @@ public class RegisterAdmin extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Segoe Print", 1, 30)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(102, 51, 0));
-        jLabel4.setText("PROMOVARE");
+        jLabel4.setText("Sterge Produs");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -87,24 +71,24 @@ public class RegisterAdmin extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        registerUtilizator.setBackground(new java.awt.Color(71, 54, 15));
-        registerUtilizator.setFont(new java.awt.Font("Segoe Print", 0, 12)); // NOI18N
-        registerUtilizator.setForeground(new java.awt.Color(255, 130, 0));
-        registerUtilizator.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(24, 28, 14), 3, true));
-        registerUtilizator.addActionListener(new java.awt.event.ActionListener() {
+        sterge.setBackground(new java.awt.Color(71, 54, 15));
+        sterge.setFont(new java.awt.Font("Segoe Print", 0, 12)); // NOI18N
+        sterge.setForeground(new java.awt.Color(255, 130, 0));
+        sterge.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(24, 28, 14), 3, true));
+        sterge.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                registerUtilizatorActionPerformed(evt);
+                stergeActionPerformed(evt);
             }
         });
 
         jLabel1.setFont(new java.awt.Font("Segoe Print", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 130, 0));
-        jLabel1.setText("   Utilizator:");
+        jLabel1.setText("Id Produs:");
 
         actiuneRegister.setBackground(new java.awt.Color(204, 134, 87));
         actiuneRegister.setFont(new java.awt.Font("Segoe Print", 1, 18)); // NOI18N
         actiuneRegister.setForeground(new java.awt.Color(102, 51, 0));
-        actiuneRegister.setText("Promoveaza la admin");
+        actiuneRegister.setText("Sterge produs");
         actiuneRegister.setFocusable(false);
         actiuneRegister.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -134,7 +118,7 @@ public class RegisterAdmin extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(registerUtilizator, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(sterge, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(inapoiMeniuIntrare, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -148,7 +132,7 @@ public class RegisterAdmin extends javax.swing.JFrame {
                 .addGap(153, 153, 153)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(registerUtilizator, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(sterge, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(87, 87, 87)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(inapoiMeniuIntrare, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -156,63 +140,44 @@ public class RegisterAdmin extends javax.swing.JFrame {
                 .addContainerGap(129, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, 520));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 650, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 520, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void registerUtilizatorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerUtilizatorActionPerformed
+    private void stergeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stergeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_registerUtilizatorActionPerformed
+    }//GEN-LAST:event_stergeActionPerformed
 
     private void actiuneRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actiuneRegisterActionPerformed
         // TODO add your handling code here:
-        Utilizator utilizator=new Utilizator();
-        
-
-        utilizator.setUtilizator(registerUtilizator.getText());
-        utilizator.setNivelPermisiune("1");
-        Connection dbconn= ConectareDB.connectDB();
-        if(dbconn != null){
-        try {
-            PreparedStatement st=(PreparedStatement)
-                    dbconn.prepareStatement("Select * from users WHERE utilizator =?");   
-            st.setString(1, utilizator.getUtilizator());
-            ResultSet res= st.executeQuery();
-            
-             
-            if(res.next()){
-                
-                utilizator.setNume(res.getString("nume"));
-                utilizator.setPrenume(res.getString("prenume"));
-                utilizator.setEmail(res.getString("email"));
-               
-            }else{
-                JOptionPane.showMessageDialog(this, "Utilizatorul/Parola nu au fost gasite","Eroare",JOptionPane.ERROR_MESSAGE);
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(Conectare.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }else
-        {
-            System.out.println("Conexiunea nu este disponibila.");
-        }
-        if(utilizator.getUtilizator().isEmpty() )
-        {
-            JOptionPane.showMessageDialog(this, "Toate campurile trebuie copletate","Eroare",JOptionPane.ERROR_MESSAGE);
-        }
-        else
-        {
-            //start the logIn process.
-            promoveazaUser(utilizator.getUtilizator() ,utilizator.getNivelPermisiune());
-            emailsend(utilizator.getEmail(),utilizator.getUtilizator(), utilizator.getNume(), utilizator.getPrenume());
-        }
+       updateNrBuc(sterge.getText());
+       sterge.setText(null);
     }//GEN-LAST:event_actiuneRegisterActionPerformed
 
     private void inapoiMeniuIntrareActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inapoiMeniuIntrareActionPerformed
         // TODO add your handling code here:
         dispose();
-       InterfataAdmin m=new InterfataAdmin();
+        InterfataAdmin m=new InterfataAdmin();
         m.setVisible(true);
     }//GEN-LAST:event_inapoiMeniuIntrareActionPerformed
 
@@ -233,20 +198,20 @@ public class RegisterAdmin extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Register.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(StergeProduse.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Register.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(StergeProduse.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Register.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(StergeProduse.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Register.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(StergeProduse.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Register().setVisible(true);
+                new StergeProduse().setVisible(true);
             }
         });
     }
@@ -259,61 +224,24 @@ public class RegisterAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JTextField registerUtilizator;
+    private javax.swing.JTextField sterge;
     // End of variables declaration//GEN-END:variables
-
-    private void promoveazaUser(String utilizator,String lvlpermi) {
+ public static void updateNrBuc(String id){
         Connection dbconn= ConectareDB.connectDB();
+      //  int nrBucCur=produsBaza.getCantitate()-produsFisier.getCantitate();
         if(dbconn != null){
         try {
             PreparedStatement st=(PreparedStatement)
-                    dbconn.prepareStatement("UPDATE users SET lvlpermi=? where utilizator=?");   
-            st.setString(2, utilizator);
-            st.setString(1, lvlpermi);
-            st.executeUpdate();
-          
-                JOptionPane.showMessageDialog(this, "Datele despre utilizator au fost salvate cu succes","Suces",JOptionPane.INFORMATION_MESSAGE);
-            
-        } catch (SQLException ex) {
+                    dbconn.prepareStatement("UPDATE produs SET nrBuc=? where id=?");   
+            st.setString(2,id );
+            st.setInt(1, -9999);
+            st.executeUpdate();   
+        } catch (java.sql.SQLException ex) {
             Logger.getLogger(Conectare.class.getName()).log(Level.SEVERE, null, ex);
         }
     }else
         {
             System.out.println("Conexiunea nu este disponibila.");
-        }
-    }
-    
-    public static void emailsend(String mail,String utilizator,String nume, String prenume) {
-        // Set system properties
-        Properties props = new Properties();
-        props.put("mail.smtp.auth", "true");
-        props.put("mail.smtp.starttls.enable", "true");
-        props.put("mail.smtp.host", "smtp.gmail.com");
-        props.put("mail.smtp.port", "587");
-
-        // Create a session
-        Session session = Session.getInstance(props,
-                new javax.mail.Authenticator() {
-                    protected PasswordAuthentication getPasswordAuthentication() {
-                        return new PasswordAuthentication("cozminascorobete@gmail.com", "iyyj opdl ldrm nufh");
-                    }
-                });
-
-        try {
-            // Create a message
-            Message message = new MimeMessage(session);
-            message.setFrom(new InternetAddress("cozminascorobete@gmail.com"));
-            message.setRecipients(Message.RecipientType.TO,
-                    InternetAddress.parse(mail));
-            message.setSubject("Anima Promovare Admin");
-            message.setText("Buna ziua "+ nume+ " "+ prenume+", contul dumeanvoastra cu utilizatorul " +utilizator+" a fost promovat la grad de admin.");
-
-            // Send the message
-            Transport.send(message);
-            System.out.println("Email sent successfully.");
-        } catch (MessagingException e) {
-            throw new RuntimeException(e);
         }
     }
 }

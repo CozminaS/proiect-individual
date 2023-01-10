@@ -1,8 +1,6 @@
 
-import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -13,12 +11,12 @@ import java.sql.SQLException;
  *
  * @author Cozmina
  */
-public class Caini extends javax.swing.JFrame {
+public class PisiciActivitati extends javax.swing.JFrame {
 
     /**
-     * Creates new form Caini
+     * Creates new form PisiciActivitati
      */
-    public Caini() {
+    public PisiciActivitati() {
         initComponents();
     }
 
@@ -53,7 +51,7 @@ public class Caini extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Logo.PNG"))); // NOI18N
 
-        jButton1.setBackground(new java.awt.Color(71, 57, 24));
+        jButton1.setBackground(new java.awt.Color(34, 28, 14));
         jButton1.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 130, 0));
         jButton1.setText("Imbracaminte");
@@ -75,7 +73,7 @@ public class Caini extends javax.swing.JFrame {
             }
         });
 
-        jButton7.setBackground(new java.awt.Color(34, 28, 14));
+        jButton7.setBackground(new java.awt.Color(71, 57, 24));
         jButton7.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
         jButton7.setForeground(new java.awt.Color(255, 130, 0));
         jButton7.setText("Activitati");
@@ -175,8 +173,8 @@ public class Caini extends javax.swing.JFrame {
                         .addGap(426, 426, 426)
                         .addComponent(inapoiMagazinOnline, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -204,12 +202,12 @@ public class Caini extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 771, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 810, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 653, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 794, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -219,19 +217,19 @@ public class Caini extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         dispose();
-        Caini c= new Caini();
+        Pisici c= new Pisici();
         c.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         dispose();
-        CainiHrana c=new CainiHrana();
+        PisiciHrana c=new PisiciHrana();
         c.setVisible(true);        // TODO add your handling code here:
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         dispose();
-        CainiActivitati c=new CainiActivitati();
+        PisiciActivitati c=new PisiciActivitati();
         c.setVisible(true);        // TODO add your handling code here:
     }//GEN-LAST:event_jButton7ActionPerformed
 
@@ -244,15 +242,14 @@ public class Caini extends javax.swing.JFrame {
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         // TODO add your handling code here:
-        AdaugaProdusCos c=new AdaugaProdusCos();
+          AdaugaProdusCos c=new AdaugaProdusCos();
         c.setVisible(true);
-      
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
         // TODO add your handling code here:
-         produseAfis.setText(null);
-         afisProdus("caini","imbracaminte");
+        produseAfis.setText(null);
+        afisProdus("pisici","activitati");
     }//GEN-LAST:event_jButton10ActionPerformed
 
     /**
@@ -272,20 +269,20 @@ public class Caini extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Caini.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PisiciActivitati.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Caini.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PisiciActivitati.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Caini.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PisiciActivitati.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Caini.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PisiciActivitati.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Caini().setVisible(true);
+                new PisiciActivitati().setVisible(true);
             }
         });
     }
@@ -303,10 +300,11 @@ public class Caini extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea produseAfis;
     // End of variables declaration//GEN-END:variables
-public void afisProdus(String animal, String categorie){
+
+ public void afisProdus(String animal, String categorie){
     
      
-    Connection dbconn= ConectareDB.connectDB();
+    java.sql.Connection dbconn= ConectareDB.connectDB();
     if(dbconn != null){
     try{
      PreparedStatement st=(PreparedStatement)
@@ -325,12 +323,12 @@ public void afisProdus(String animal, String categorie){
                 produs.setPret(Integer.parseInt(res.getString("pret")));
               
                
-               produseAfis.append(Produs.afisProdusFrame(produs)+"\n\n*********************************************+\n");
+               produseAfis.append(Produs.afisProdusFrame(produs)+"\n\n*********************************************\n");
          
             
             }
           
-                }catch (SQLException ex) {
+                }catch (java.sql.SQLException ex) {
             java.util.logging.Logger.getLogger(Conectare.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
     

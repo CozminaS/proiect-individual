@@ -4,6 +4,27 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
+import java.util.Properties;
+
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.util.Arrays;
+import javax.swing.JOptionPane;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -43,8 +64,6 @@ public class Conectare extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         inapoiMeniuIntrare = new javax.swing.JButton();
         actiuneConectare = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
-        permi = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -130,21 +149,6 @@ public class Conectare extends javax.swing.JFrame {
             }
         });
 
-        jLabel5.setBackground(new java.awt.Color(34, 28, 14));
-        jLabel5.setFont(new java.awt.Font("Segoe Print", 0, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 130, 0));
-        jLabel5.setText("Admin");
-
-        permi.setBackground(new java.awt.Color(71, 54, 15));
-        permi.setFont(new java.awt.Font("Segoe Print", 0, 12)); // NOI18N
-        permi.setForeground(new java.awt.Color(255, 130, 0));
-        permi.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(24, 28, 14), 3, true));
-        permi.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                permiActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -153,20 +157,19 @@ public class Conectare extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(135, 135, 135)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(inapoiMeniuIntrare, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE)
-                        .addGap(37, 37, 37)
-                        .addComponent(actiuneConectare, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(inapoiMeniuIntrare, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(conectareUtilizator)
-                            .addComponent(conectareParola)
-                            .addComponent(permi))))
+                            .addComponent(conectareParola)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addComponent(actiuneConectare, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(180, 180, 180))
         );
         jPanel1Layout.setVerticalGroup(
@@ -181,15 +184,11 @@ public class Conectare extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(conectareParola, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
-                .addGap(41, 41, 41)
+                .addGap(87, 87, 87)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(permi, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(68, 68, 68)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(inapoiMeniuIntrare, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(actiuneConectare, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(126, Short.MAX_VALUE))
+                    .addComponent(actiuneConectare, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(inapoiMeniuIntrare, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(182, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -214,11 +213,10 @@ public class Conectare extends javax.swing.JFrame {
 
     private void actiuneConectareActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actiuneConectareActionPerformed
         // TODO add your handling code here:
-        Utilizator utilizator=new Utilizator();
+        Utilizator utilizator=new Utilizator(conectareUtilizator.getText(),String.valueOf(conectareParola.getPassword()));
         
-        utilizator.setUtilizator(conectareUtilizator.getText());
-        utilizator.setParola(String.valueOf(conectareParola.getPassword()));
-         utilizator.setNivelPermisiune(permi.getText());
+
+        //utilizator.setNivelPermisiune("0");
         
         
         
@@ -229,17 +227,13 @@ public class Conectare extends javax.swing.JFrame {
         else
         {
             //start the logIn process.
-            conectareUser(utilizator.getUtilizator(),utilizator.getParola(), utilizator.getNivelPermisiune());  
-            
+            conectareUser(utilizator);  
+            Utilizator.mamConectat(utilizator);
         }
         
 
     
     }//GEN-LAST:event_actiuneConectareActionPerformed
-
-    private void permiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_permiActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_permiActionPerformed
 
     /**
      * @param args the command line arguments
@@ -286,36 +280,41 @@ public class Conectare extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JTextField permi;
     // End of variables declaration//GEN-END:variables
 
-    private void conectareUser(String utilizator, String parola,String perm) {
+    void conectareUser(Utilizator utilizator) {
         Connection dbconn= ConectareDB.connectDB();
         if(dbconn != null){
         try {
             PreparedStatement st=(PreparedStatement)
-                    dbconn.prepareStatement("Select * from users WHERE utilizator =? AND parola=? AND lvlpermi=?");   
-            st.setString(1, utilizator);
-            st.setString(2, parola);
-              st.setString(3, perm);
+                    dbconn.prepareStatement("Select * from users WHERE utilizator =? AND parola=?");   
+            st.setString(1, utilizator.getUtilizator());
+            st.setString(2, utilizator.getParola());
             ResultSet res= st.executeQuery();
+            
+             
             if(res.next()){
+                String perm=res.getString("lvlPermi");
+                utilizator.setNume(res.getString("nume"));
+                utilizator.setPrenume(res.getString("prenume"));
+                utilizator.setEmail(res.getString("email"));
+                utilizator.setNrTelefon(res.getString("telefon"));
+                utilizator.setTara(res.getString("tara"));
+                utilizator.setJudet(res.getString("judet"));
+                utilizator.setOras(res.getString("oras"));    
+                utilizator.setStrada(res.getString("strada"));    
+                utilizator.setNivelPermisiune(res.getString("lvlPermi"));
                 //afiseaza meniu nou
                 dispose();
                 if(perm.equals("0")){
-                    MagazinOnline magazin= new MagazinOnline();
+                   MagazinOnline magazin=new MagazinOnline();
                     magazin.setVisible(true);}
                 else{InterfataAdmin c=new InterfataAdmin();
                 c.setVisible(true);}
                 
-                PreparedStatement sti=(PreparedStatement)
-                dbconn.prepareStatement("INSERT INTO conectat(user) VALUES(?)");   
-                sti.setString(1, utilizator);
            
-            int rest= sti.executeUpdate();
           
                 
             }else{
@@ -329,4 +328,8 @@ public class Conectare extends javax.swing.JFrame {
             System.out.println("Conexiunea nu este disponibila.");
         }
     }
+    
+      
+    
+    
 }

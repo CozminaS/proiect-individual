@@ -1,6 +1,4 @@
 
-import java.lang.System.Logger;
-import java.lang.System.Logger.Level;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -18,12 +16,12 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Cozmina
  */
-public class IstoricComenzi extends javax.swing.JFrame {
+public class Incasari extends javax.swing.JFrame {
 
     /**
-     * Creates new form IstoricComenzi
+     * Creates new form Incasari
      */
-    public IstoricComenzi() {
+    public Incasari() {
         initComponents();
     }
 
@@ -36,25 +34,22 @@ public class IstoricComenzi extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        meniuCaini2 = new javax.swing.JButton();
         meniuCaini3 = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         tabel = new javax.swing.JTable();
         meniuCaini4 = new javax.swing.JButton();
-        meniuCaini5 = new javax.swing.JButton();
-        idComanda = new javax.swing.JTextField();
-        rezervare = new javax.swing.JTextField();
-        meniuCaini6 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        total = new javax.swing.JLabel();
+
+        jLabel1.setText("jLabel1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(739, 735));
-        setResizable(false);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
@@ -68,7 +63,7 @@ public class IstoricComenzi extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Segoe Print", 1, 30)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(102, 51, 0));
-        jLabel4.setText("Comenzi Si Rezervari");
+        jLabel4.setText("Incasari");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -89,21 +84,10 @@ public class IstoricComenzi extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        meniuCaini2.setBackground(new java.awt.Color(34, 28, 14));
-        meniuCaini2.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
-        meniuCaini2.setForeground(new java.awt.Color(255, 130, 0));
-        meniuCaini2.setText("Comanda Expediata");
-        meniuCaini2.setFocusable(false);
-        meniuCaini2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                meniuCaini2ActionPerformed(evt);
-            }
-        });
-
         meniuCaini3.setBackground(new java.awt.Color(34, 28, 14));
         meniuCaini3.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
         meniuCaini3.setForeground(new java.awt.Color(255, 130, 0));
-        meniuCaini3.setText("Afisare Comezni");
+        meniuCaini3.setText("Afisare Incasari");
         meniuCaini3.setFocusable(false);
         meniuCaini3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -132,79 +116,37 @@ public class IstoricComenzi extends javax.swing.JFrame {
             }
         });
 
-        meniuCaini5.setBackground(new java.awt.Color(34, 28, 14));
-        meniuCaini5.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
-        meniuCaini5.setForeground(new java.awt.Color(255, 130, 0));
-        meniuCaini5.setText("Afisare Rezervari");
-        meniuCaini5.setFocusable(false);
-        meniuCaini5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                meniuCaini5ActionPerformed(evt);
-            }
-        });
+        jLabel5.setFont(new java.awt.Font("Segoe Print", 1, 30)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(102, 51, 0));
+        jLabel5.setText("Total Incasari:");
 
-        idComanda.setBackground(new java.awt.Color(71, 54, 15));
-        idComanda.setFont(new java.awt.Font("Segoe Print", 0, 12)); // NOI18N
-        idComanda.setForeground(new java.awt.Color(255, 130, 0));
-        idComanda.setText("Introdu ID pentru comanda care a fost expediata");
-        idComanda.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(24, 28, 14), 3, true));
-        idComanda.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                idComandaActionPerformed(evt);
-            }
-        });
-
-        rezervare.setBackground(new java.awt.Color(71, 54, 15));
-        rezervare.setFont(new java.awt.Font("Segoe Print", 0, 12)); // NOI18N
-        rezervare.setForeground(new java.awt.Color(255, 130, 0));
-        rezervare.setText("Introdu ID pentru rezervarea care a fost expediata");
-        rezervare.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(24, 28, 14), 3, true));
-        rezervare.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rezervareActionPerformed(evt);
-            }
-        });
-
-        meniuCaini6.setBackground(new java.awt.Color(34, 28, 14));
-        meniuCaini6.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
-        meniuCaini6.setForeground(new java.awt.Color(255, 130, 0));
-        meniuCaini6.setText("Rezervare Expediata");
-        meniuCaini6.setFocusable(false);
-        meniuCaini6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                meniuCaini6ActionPerformed(evt);
-            }
-        });
+        total.setFont(new java.awt.Font("Segoe Print", 1, 30)); // NOI18N
+        total.setForeground(new java.awt.Color(102, 51, 0));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(rezervare, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(meniuCaini6, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(idComanda, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(97, 97, 97)
-                        .addComponent(meniuCaini2, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(meniuCaini4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(meniuCaini3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(meniuCaini5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 532, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(82, 82, 82))
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 50, Short.MAX_VALUE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(meniuCaini4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(meniuCaini3, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 532, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(85, 85, 85)
+                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(total, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(82, 82, 82)))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -214,45 +156,46 @@ public class IstoricComenzi extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(89, 89, 89)
                         .addComponent(meniuCaini3)
-                        .addGap(37, 37, 37)
-                        .addComponent(meniuCaini5)
-                        .addGap(214, 214, 214)
+                        .addGap(284, 284, 284)
                         .addComponent(meniuCaini4))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 413, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(114, 114, 114)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(meniuCaini2)
-                    .addComponent(idComanda, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(37, 37, 37)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(rezervare, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(meniuCaini6))
-                .addContainerGap(170, Short.MAX_VALUE))
+                .addGap(31, 31, 31)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(total, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(320, Short.MAX_VALUE))
         );
 
         jScrollPane1.setViewportView(jPanel1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 730, 740));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 730, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 657, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void meniuCaini2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_meniuCaini2ActionPerformed
-        try {
-            // TODO add your handling code here:
-            Comanda.expediereComanda(Integer.parseInt(idComanda.getText()));
-        } catch (SQLException ex) {
-            java.util.logging.Logger.getLogger(IstoricComenzi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        idComanda.setText("Introdu ID pentru comanda care a fost expediata");
-    }//GEN-LAST:event_meniuCaini2ActionPerformed
-
     private void meniuCaini3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_meniuCaini3ActionPerformed
         // TODO add your handling code here:
+        
+       total.setText(Integer.toString(afis()+afis1()));
+     
         tabel.removeAll();
-        afis();
     }//GEN-LAST:event_meniuCaini3ActionPerformed
 
     private void meniuCaini4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_meniuCaini4ActionPerformed
@@ -262,33 +205,6 @@ public class IstoricComenzi extends javax.swing.JFrame {
         i.setVisible(true);
     }//GEN-LAST:event_meniuCaini4ActionPerformed
 
-    private void meniuCaini5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_meniuCaini5ActionPerformed
-        // TODO add your handling code here:
-        
-         afis1();
-    }//GEN-LAST:event_meniuCaini5ActionPerformed
-
-    private void idComandaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idComandaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_idComandaActionPerformed
-
-    private void rezervareActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rezervareActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rezervareActionPerformed
-
-    private void meniuCaini6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_meniuCaini6ActionPerformed
-        // TODO add your handling code here:
-         try {
-            // TODO add your handling code here:
-            Comanda.expediereRezervare(Integer.parseInt(rezervare.getText()));
-        } catch (SQLException ex) {
-            java.util.logging.Logger.getLogger(IstoricComenzi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-         rezervare.setText("Introdu ID pentru rezervarea care a fost expediata");
-    }//GEN-LAST:event_meniuCaini6ActionPerformed
-
-   
-    
     /**
      * @param args the command line arguments
      */
@@ -306,41 +222,40 @@ public class IstoricComenzi extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(IstoricComenzi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Incasari.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(IstoricComenzi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Incasari.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(IstoricComenzi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Incasari.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(IstoricComenzi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Incasari.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new IstoricComenzi().setVisible(true);
+                new Incasari().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField idComanda;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JButton meniuCaini2;
     private javax.swing.JButton meniuCaini3;
     private javax.swing.JButton meniuCaini4;
-    private javax.swing.JButton meniuCaini5;
-    private javax.swing.JButton meniuCaini6;
-    private javax.swing.JTextField rezervare;
     private javax.swing.JTable tabel;
+    private javax.swing.JLabel total;
     // End of variables declaration//GEN-END:variables
- public void afis(){
+public int afis(){
+    int pretTotal=0;
      DefaultTableModel tblModel = (DefaultTableModel) tabel.getModel();
             //add string array data into jtbale
             tblModel.setRowCount(0);
@@ -348,7 +263,7 @@ public class IstoricComenzi extends javax.swing.JFrame {
     if(dbconn != null){
     try{
      PreparedStatement st=(PreparedStatement)
-                    dbconn.prepareStatement("select * from comenzi where status =1");   
+                    dbconn.prepareStatement("select * from comenzi where status =2");   
             
             
            ResultSet res= st.executeQuery();
@@ -360,7 +275,7 @@ public class IstoricComenzi extends javax.swing.JFrame {
                comanda.setProduseID(res.getString("produseId"));
                 comanda.setBuc(res.getString("nrBuc"));
               
-                
+                pretTotal=pretTotal+comanda.getPret();
                 String client=Utilizator.cautaUtilizatorDupaId(comanda.getCumparatorID());
                 ArrayList<String> produse=Produs.listaIdProdus(comanda);
                 ArrayList<String> bucati=Produs.listaBucProdus(comanda);
@@ -384,17 +299,20 @@ public class IstoricComenzi extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Conectare.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
     
-}}
- 
- public void afis1(){
+}
+return pretTotal;
+}
+
+ public int afis1(){
+     int pretTotal=0;
      DefaultTableModel tblModel = (DefaultTableModel) tabel.getModel();
             //add string array data into jtbale
-            tblModel.setRowCount(0);
+           
     Connection dbconn= ConectareDB.connectDB();
     if(dbconn != null){
     try{
      PreparedStatement st=(PreparedStatement)
-                    dbconn.prepareStatement("select * from rezervari where status =1");   
+                    dbconn.prepareStatement("select * from rezervari where status =2");   
             
             
            ResultSet res= st.executeQuery();
@@ -405,7 +323,7 @@ public class IstoricComenzi extends javax.swing.JFrame {
                comanda.setCumparatorID(res.getString("cumparatorId"));
                comanda.setProduseID(res.getString("produseId"));
                 comanda.setBuc(res.getString("nrBuc"));
-              
+              pretTotal=pretTotal+comanda.getPret();
                 
                 String client=Utilizator.cautaUtilizatorDupaId(comanda.getCumparatorID());
                 ArrayList<String> produse=Produs.listaIdProdus(comanda);
@@ -430,6 +348,5 @@ public class IstoricComenzi extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Conectare.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
     
-}}
- 
+}return pretTotal;}
 }

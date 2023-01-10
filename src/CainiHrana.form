@@ -153,7 +153,7 @@
             <Component class="javax.swing.JButton" name="jButton1">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="18" green="39" red="47" type="rgb"/>
+                  <Color blue="e" green="1c" red="22" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe Print" size="14" style="0"/>
@@ -171,7 +171,7 @@
             <Component class="javax.swing.JButton" name="jButton6">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="e" green="1c" red="22" type="rgb"/>
+                  <Color blue="18" green="39" red="47" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe Print" size="14" style="0"/>

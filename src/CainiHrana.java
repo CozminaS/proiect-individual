@@ -13,12 +13,12 @@ import java.sql.SQLException;
  *
  * @author Cozmina
  */
-public class Caini extends javax.swing.JFrame {
+public class CainiHrana extends javax.swing.JFrame {
 
     /**
-     * Creates new form Caini
+     * Creates new form CainiHrana
      */
-    public Caini() {
+    public CainiHrana() {
         initComponents();
     }
 
@@ -53,7 +53,7 @@ public class Caini extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Logo.PNG"))); // NOI18N
 
-        jButton1.setBackground(new java.awt.Color(71, 57, 24));
+        jButton1.setBackground(new java.awt.Color(34, 28, 14));
         jButton1.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 130, 0));
         jButton1.setText("Imbracaminte");
@@ -64,7 +64,7 @@ public class Caini extends javax.swing.JFrame {
             }
         });
 
-        jButton6.setBackground(new java.awt.Color(34, 28, 14));
+        jButton6.setBackground(new java.awt.Color(71, 57, 24));
         jButton6.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
         jButton6.setForeground(new java.awt.Color(255, 130, 0));
         jButton6.setText("Hrana");
@@ -244,15 +244,14 @@ public class Caini extends javax.swing.JFrame {
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         // TODO add your handling code here:
-        AdaugaProdusCos c=new AdaugaProdusCos();
+          AdaugaProdusCos c=new AdaugaProdusCos();
         c.setVisible(true);
-      
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
         // TODO add your handling code here:
-         produseAfis.setText(null);
-         afisProdus("caini","imbracaminte");
+        produseAfis.setText(null);
+        afisProdus("caini","hrana");
     }//GEN-LAST:event_jButton10ActionPerformed
 
     /**
@@ -272,20 +271,20 @@ public class Caini extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Caini.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CainiHrana.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Caini.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CainiHrana.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Caini.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CainiHrana.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Caini.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CainiHrana.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Caini().setVisible(true);
+                new CainiHrana().setVisible(true);
             }
         });
     }
@@ -303,6 +302,7 @@ public class Caini extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea produseAfis;
     // End of variables declaration//GEN-END:variables
+
 public void afisProdus(String animal, String categorie){
     
      

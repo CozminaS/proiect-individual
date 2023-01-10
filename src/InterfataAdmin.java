@@ -32,6 +32,12 @@ public class InterfataAdmin extends javax.swing.JFrame {
         meniuCaini = new javax.swing.JButton();
         meniuCaini1 = new javax.swing.JButton();
         meniuCaini2 = new javax.swing.JButton();
+        retrogradareUtilizator = new javax.swing.JButton();
+        adaugaProduse = new javax.swing.JButton();
+        stoc = new javax.swing.JButton();
+        necesar = new javax.swing.JButton();
+        necesar1 = new javax.swing.JButton();
+        adaugaProduse1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(204, 134, 87));
@@ -92,11 +98,77 @@ public class InterfataAdmin extends javax.swing.JFrame {
         meniuCaini2.setBackground(new java.awt.Color(34, 28, 14));
         meniuCaini2.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
         meniuCaini2.setForeground(new java.awt.Color(255, 130, 0));
-        meniuCaini2.setText("Creare Admin Nou");
+        meniuCaini2.setText("Promoveaza Utilizator la Admin");
         meniuCaini2.setFocusable(false);
         meniuCaini2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 meniuCaini2ActionPerformed(evt);
+            }
+        });
+
+        retrogradareUtilizator.setBackground(new java.awt.Color(34, 28, 14));
+        retrogradareUtilizator.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
+        retrogradareUtilizator.setForeground(new java.awt.Color(255, 130, 0));
+        retrogradareUtilizator.setText("Retrogradare Utilizator la User");
+        retrogradareUtilizator.setFocusable(false);
+        retrogradareUtilizator.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                retrogradareUtilizatorActionPerformed(evt);
+            }
+        });
+
+        adaugaProduse.setBackground(new java.awt.Color(34, 28, 14));
+        adaugaProduse.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
+        adaugaProduse.setForeground(new java.awt.Color(255, 130, 0));
+        adaugaProduse.setText("Adauga Produse Noi");
+        adaugaProduse.setFocusable(false);
+        adaugaProduse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                adaugaProduseActionPerformed(evt);
+            }
+        });
+
+        stoc.setBackground(new java.awt.Color(34, 28, 14));
+        stoc.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
+        stoc.setForeground(new java.awt.Color(255, 130, 0));
+        stoc.setText("Completeaza Stoc");
+        stoc.setFocusable(false);
+        stoc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                stocActionPerformed(evt);
+            }
+        });
+
+        necesar.setBackground(new java.awt.Color(34, 28, 14));
+        necesar.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
+        necesar.setForeground(new java.awt.Color(255, 130, 0));
+        necesar.setText("Genereaza Necesar");
+        necesar.setFocusable(false);
+        necesar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                necesarActionPerformed(evt);
+            }
+        });
+
+        necesar1.setBackground(new java.awt.Color(34, 28, 14));
+        necesar1.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
+        necesar1.setForeground(new java.awt.Color(255, 130, 0));
+        necesar1.setText("Deconectare");
+        necesar1.setFocusable(false);
+        necesar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                necesar1ActionPerformed(evt);
+            }
+        });
+
+        adaugaProduse1.setBackground(new java.awt.Color(34, 28, 14));
+        adaugaProduse1.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
+        adaugaProduse1.setForeground(new java.awt.Color(255, 130, 0));
+        adaugaProduse1.setText("Sterge Produse");
+        adaugaProduse1.setFocusable(false);
+        adaugaProduse1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                adaugaProduse1ActionPerformed(evt);
             }
         });
 
@@ -105,15 +177,20 @@ public class InterfataAdmin extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(meniuCaini1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(meniuCaini, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(meniuCaini2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(adaugaProduse, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(retrogradareUtilizator, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(meniuCaini2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 764, Short.MAX_VALUE)
+                        .addComponent(meniuCaini1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(meniuCaini, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(stoc, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(necesar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(necesar1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(adaugaProduse1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -125,10 +202,22 @@ public class InterfataAdmin extends javax.swing.JFrame {
                 .addComponent(meniuCaini1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(meniuCaini2)
-                .addGap(0, 212, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(retrogradareUtilizator)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(adaugaProduse)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(adaugaProduse1)
+                .addGap(18, 18, 18)
+                .addComponent(stoc)
+                .addGap(18, 18, 18)
+                .addComponent(necesar)
+                .addGap(40, 40, 40)
+                .addComponent(necesar1)
+                .addGap(0, 127, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 810, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -142,6 +231,9 @@ public class InterfataAdmin extends javax.swing.JFrame {
 
     private void meniuCaini1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_meniuCaini1ActionPerformed
         // TODO add your handling code here:
+        dispose();
+        Incasari i=new Incasari();
+        i.setVisible(true);
     }//GEN-LAST:event_meniuCaini1ActionPerformed
 
     private void meniuCaini2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_meniuCaini2ActionPerformed
@@ -150,6 +242,49 @@ public class InterfataAdmin extends javax.swing.JFrame {
         RegisterAdmin r= new RegisterAdmin();
         r.setVisible(true);
     }//GEN-LAST:event_meniuCaini2ActionPerformed
+
+    private void retrogradareUtilizatorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_retrogradareUtilizatorActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        RetrogradareUser r= new RetrogradareUser();
+        r.setVisible(true);
+    }//GEN-LAST:event_retrogradareUtilizatorActionPerformed
+
+    private void adaugaProduseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adaugaProduseActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        AdaugaProdus produs=new AdaugaProdus();
+        produs.setVisible(true);
+    }//GEN-LAST:event_adaugaProduseActionPerformed
+
+    private void stocActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stocActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        CompletareStoc s=new CompletareStoc();
+        s.setVisible(true);
+    }//GEN-LAST:event_stocActionPerformed
+
+    private void necesarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_necesarActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        Necesar n= new Necesar();
+        n.setVisible(true);
+    }//GEN-LAST:event_necesarActionPerformed
+
+    private void necesar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_necesar1ActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        Utilizator.nuMamConectat();
+        MeniuIntrare m= new MeniuIntrare();
+        m.setVisible(true);
+    }//GEN-LAST:event_necesar1ActionPerformed
+
+    private void adaugaProduse1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adaugaProduse1ActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        StergeProduse m=new StergeProduse();
+        m.setVisible(true);
+    }//GEN-LAST:event_adaugaProduse1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -187,6 +322,8 @@ public class InterfataAdmin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton adaugaProduse;
+    private javax.swing.JButton adaugaProduse1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
@@ -194,5 +331,9 @@ public class InterfataAdmin extends javax.swing.JFrame {
     private javax.swing.JButton meniuCaini;
     private javax.swing.JButton meniuCaini1;
     private javax.swing.JButton meniuCaini2;
+    private javax.swing.JButton necesar;
+    private javax.swing.JButton necesar1;
+    private javax.swing.JButton retrogradareUtilizator;
+    private javax.swing.JButton stoc;
     // End of variables declaration//GEN-END:variables
 }

@@ -1,3 +1,8 @@
+
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -30,11 +35,16 @@ public class MagazinOnline extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         meniuCaini = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
+        jButton10 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        inapoiMeniuIntrare = new javax.swing.JButton();
+        recomandari = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        recomandarea = new javax.swing.JTextArea();
+        inapoiMeniuIntrare1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -68,17 +78,6 @@ public class MagazinOnline extends javax.swing.JFrame {
             }
         });
 
-        jButton6.setBackground(new java.awt.Color(34, 28, 14));
-        jButton6.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
-        jButton6.setForeground(new java.awt.Color(255, 130, 0));
-        jButton6.setText("Pasari");
-        jButton6.setFocusable(false);
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
-            }
-        });
-
         jButton7.setBackground(new java.awt.Color(34, 28, 14));
         jButton7.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
         jButton7.setForeground(new java.awt.Color(255, 130, 0));
@@ -87,6 +86,17 @@ public class MagazinOnline extends javax.swing.JFrame {
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton7ActionPerformed(evt);
+            }
+        });
+
+        jButton10.setBackground(new java.awt.Color(34, 28, 14));
+        jButton10.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
+        jButton10.setForeground(new java.awt.Color(255, 130, 0));
+        jButton10.setText("Rezervari");
+        jButton10.setFocusable(false);
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
             }
         });
 
@@ -108,10 +118,8 @@ public class MagazinOnline extends javax.swing.JFrame {
                         .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE)))
+                        .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE))
+                    .addComponent(jButton10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -122,11 +130,11 @@ public class MagazinOnline extends javax.swing.JFrame {
                 .addComponent(meniuCaini)
                 .addGap(30, 30, 30)
                 .addComponent(jButton5)
-                .addGap(30, 30, 30)
-                .addComponent(jButton6)
-                .addGap(30, 30, 30)
+                .addGap(37, 37, 37)
                 .addComponent(jButton7)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton10)
+                .addGap(16, 16, 16))
         );
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fundal-Magazin-animale (1).jpeg"))); // NOI18N
@@ -135,14 +143,54 @@ public class MagazinOnline extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(34, 28, 14));
         jLabel2.setText("Alege categoria de animale pe care vrei sa o vizitezi.");
 
-        inapoiMeniuIntrare.setBackground(new java.awt.Color(34, 28, 14));
-        inapoiMeniuIntrare.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
-        inapoiMeniuIntrare.setForeground(new java.awt.Color(255, 130, 0));
-        inapoiMeniuIntrare.setText("Inapoi ");
-        inapoiMeniuIntrare.setFocusable(false);
-        inapoiMeniuIntrare.addActionListener(new java.awt.event.ActionListener() {
+        recomandari.setBackground(new java.awt.Color(34, 28, 14));
+        recomandari.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
+        recomandari.setForeground(new java.awt.Color(255, 130, 0));
+        recomandari.setText("Recomandari");
+        recomandari.setFocusable(false);
+        recomandari.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inapoiMeniuIntrareActionPerformed(evt);
+                recomandariActionPerformed(evt);
+            }
+        });
+
+        jButton8.setBackground(new java.awt.Color(34, 28, 14));
+        jButton8.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
+        jButton8.setForeground(new java.awt.Color(255, 130, 0));
+        jButton8.setText("Vizualizare Profil");
+        jButton8.setFocusable(false);
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+
+        jButton9.setBackground(new java.awt.Color(34, 28, 14));
+        jButton9.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
+        jButton9.setForeground(new java.awt.Color(255, 130, 0));
+        jButton9.setText("Vizualizare Cos");
+        jButton9.setFocusable(false);
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+
+        recomandarea.setBackground(new java.awt.Color(204, 134, 87));
+        recomandarea.setColumns(20);
+        recomandarea.setRows(5);
+        recomandarea.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        recomandarea.setFocusable(false);
+        jScrollPane1.setViewportView(recomandarea);
+
+        inapoiMeniuIntrare1.setBackground(new java.awt.Color(34, 28, 14));
+        inapoiMeniuIntrare1.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
+        inapoiMeniuIntrare1.setForeground(new java.awt.Color(255, 130, 0));
+        inapoiMeniuIntrare1.setText("Inapoi ");
+        inapoiMeniuIntrare1.setFocusable(false);
+        inapoiMeniuIntrare1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inapoiMeniuIntrare1ActionPerformed(evt);
             }
         });
 
@@ -154,28 +202,52 @@ public class MagazinOnline extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 509, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(70, 70, 70)
-                                .addComponent(jLabel3)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 509, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(73, 73, 73))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(483, 483, 483)
-                        .addComponent(inapoiMeniuIntrare, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(23, Short.MAX_VALUE))))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(46, 46, 46)
+                                        .addComponent(recomandari, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addContainerGap(586, Short.MAX_VALUE)
+                    .addComponent(inapoiMeniuIntrare1, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(58, 58, 58)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(inapoiMeniuIntrare)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
+                .addComponent(jButton8)
+                .addGap(19, 19, 19)
+                .addComponent(jButton9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(recomandari))))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(16, 16, 16)
+                    .addComponent(inapoiMeniuIntrare1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGap(451, 451, 451)))
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 500));
@@ -192,22 +264,73 @@ public class MagazinOnline extends javax.swing.JFrame {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
+        dispose();
+        Pisici p= new Pisici();
+        p.setVisible(true);
     }//GEN-LAST:event_jButton5ActionPerformed
-
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
+        dispose();
+        AnimaleMici a= new AnimaleMici();
+        a.setVisible(true);
     }//GEN-LAST:event_jButton7ActionPerformed
 
-    private void inapoiMeniuIntrareActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inapoiMeniuIntrareActionPerformed
+    private void recomandariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recomandariActionPerformed
+        // TODO add your handling code here:
+        if(!Utilizator.verificConectarea()){
+            JPanel thi=new JPanel();
+                JOptionPane.showMessageDialog(thi, "Pentru recomandari conecteazate!.","Suces",JOptionPane.INFORMATION_MESSAGE);
+        
+        }
+        else{
+           Comanda comanda=new Comanda(Comanda.lastComanda());
+           ArrayList<String> produse = (ArrayList<String>) Produs.listaIdProdus(comanda);
+           String recomandare=Produs.elementRecomandare(produse);
+           if(recomandare!="none"){
+           recomandarea.setText(Produs.afisareProdusR(Produs.cautaProdus(Integer.parseInt(recomandare))));
+        }}
+    }//GEN-LAST:event_recomandariActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // TODO add your handling code here:
+        if(!Utilizator.verificConectarea()){
+             JPanel thi=new JPanel();
+                JOptionPane.showMessageDialog(thi, "Pentru a vizualiza profilul trebuie sa fiti conectat.","Suces",JOptionPane.INFORMATION_MESSAGE);
+        }else{
+        dispose();
+       VizualizareProfil cos= new VizualizareProfil();
+        cos.setVisible(true); }
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        // TODO add your handling code here:
+        if(!Utilizator.verificConectarea()){
+             JPanel thi=new JPanel();
+                JOptionPane.showMessageDialog(thi, "Pentru a vizualiza cosul de cumparaturi trebuie sa fiti conectat.","Suces",JOptionPane.INFORMATION_MESSAGE);
+        }else{
+        dispose();
+        CosCumparaturi cos= new CosCumparaturi();
+        cos.setVisible(true); }
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void inapoiMeniuIntrare1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inapoiMeniuIntrare1ActionPerformed
         // TODO add your handling code here:
         dispose();
-        MeniuIntrare meniu=new MeniuIntrare();
-        meniu.setVisible(true);
-    }//GEN-LAST:event_inapoiMeniuIntrareActionPerformed
+        MeniuIntrare m= new MeniuIntrare();
+        m.setVisible(true);
+    }//GEN-LAST:event_inapoiMeniuIntrare1ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        // TODO add your handling code here:
+        if(!Utilizator.verificConectarea()){
+             JPanel thi=new JPanel();
+                JOptionPane.showMessageDialog(thi, "Pentru efectua rezervari trebuie sa fi conectat.","Suces",JOptionPane.INFORMATION_MESSAGE);
+        }else{
+        dispose();
+        VizualizareRezervare cos= new VizualizareRezervare();
+        cos.setVisible(true); }
+    }//GEN-LAST:event_jButton10ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -245,15 +368,22 @@ public class MagazinOnline extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton inapoiMeniuIntrare;
+    private javax.swing.JButton inapoiMeniuIntrare1;
+    private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton meniuCaini;
+    private javax.swing.JTextArea recomandarea;
+    private javax.swing.JButton recomandari;
     // End of variables declaration//GEN-END:variables
+
+
 }
